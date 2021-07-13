@@ -12,12 +12,12 @@ let json = `[{"id":1,"first_name":"Merrily","last_name":"Diperaus","email":"mdip
 
 let obj = JSON.parse(json);
 
-createTable();
+createTable(obj);
 
-function createTable() {
+function createTable(arr) {
     let tableTag = document.createElement("table");
 
-    for (let row of obj) {
+    for (let row of arr) {
         let trTag = document.createElement("tr");
 
         for (let field in row) {
