@@ -4,12 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        input{
+            margin-bottom: 15px;
+        }
+        tr{
+            transition: background .2s ease;
+        }
+    </style>
     <title>Document</title>
 </head>
 <body>
     <div id="show">
+        <h1>입력 폼</h1>
+        ID: <input type="number" name="" id="eid" value="11"><br>
+        FName: <input type="text" name="" id="first_name"><br>
+        LName: <input type="text" name="" id="last_name"><br>
+        Email: <input type="text" name="" id="e-mail"><br>
+        Gender: <input type="text" name="" id="gender"><br>
+        <button id="addBtn" onclick="addRow()">추가</button>
+        <button id="modBtn" onclick="modRow()">수정</button><br>
         <h1>사원정보</h1>
-        
     </div>
     <script src="js/employees.js"></script>
 </body>

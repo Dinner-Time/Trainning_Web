@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let ary = [3,6,2,5,8];
+
+        ary.push(9);
+        ary.unshift(9);
+
+        ary.pop();
+        ary.shift();
+
+        ary.sort(function(a, b){
+            if(a - b < 0) return -1 // 오름차순
+            else if (a > b) return 1
+            else return 0;
+        })
+    </script>
+</body>
+</html>
