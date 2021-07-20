@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+
+	<title>Basic 게시판</title>
+</head>
+
+<body>
+	<section>
+		<h1>게시글 목록</h1>
+		<div class="line"></div>
+		<div id="commentList"></div>
+
+		<!-- 글등록 -->
+		<h1>게시글 작성</h1>
+		<div class="line"></div>
+		<div id="commentAdd">
+			<form action="" name="addForm">
+				<div>
+					<input type="text" name="name" onchange="textEffect()">
+					<label for="" class="active">what's your name?</label>
+				</div>
+				<div>
+					<input type="text" name="content" onchange="textEffect()">
+					<label for="" class="active">type what you want</label>
+				</div>
+				<input type="button" value="등록" onclick="addComment()">
+			</form>
+		</div>
+
+		<!-- 글수정 -->
+		<div id="commentUpdate">
+			<form action="" name="updateForm">
+				<input type="hidden" name="id" value="">
+				<div>
+					<input type="text" name="name" onchange="textEffect()">
+					<label for="" class="inactive">what's your name?</label>
+				</div>
+				<div>
+					<input type="text" name="content" onchange="textEffect()">
+					<label for="" class="inactive">type what you want</label>
+				</div>
+				<input type="button" value="변경" onclick="updateComment()">
+				<input type="button" value="취소" onclick="cancelComment()">
+			</form>
+		</div>
+
+	</section>
+	<script src="../js/jquery-3.6.0.min.js"></script>
+	<script defer src="js/app.js"></script>
+</body>
+
+</html>

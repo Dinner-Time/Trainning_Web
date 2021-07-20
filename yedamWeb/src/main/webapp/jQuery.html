@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        // $(selector) = document.querySelector
+        $(document).ready(() => { // function()
+            $('#show').html('<h1>Hello world</h1>'); // html()의 파라미터값이 없을 경우 이미 존재하는 html값을 가져온다.
+
+            // $(tag) = document.createElement
+            const ulTag = $('<ul />').append(
+                $('<li />').text('Apple'),
+                $('<li />').text('Banana'),
+                $('<li />').text('Cherry')
+            );
+            $('#show').append(ulTag);
+
+            // setAttribute
+            $(ulTag).attr('id', 'fruits'); 
+
+            // style
+            $(ulTag).css('background', 'yellow'); 
+
+            // style 여러개를 한번에 넣을때 => 매개변수로 object 저장
+            $(ulTag).css({
+                'color' : 'red',
+                'padding' : '2em'
+            }); 
+            
+            $('#delBtn').on('click', delFunc);
+        }); // = window.onload
+
+        // 삭제 콜백 함수
+        function delFunc(){
+            const liTag = $('#show li');
+            liTag.first().remove();
+            liTag.last().remove();
+        }
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="show">
+        <!-- <ul>
+            <li>Apple</li>
+            <li>Banana</li>
+            <li>Cherry</li>
+        </ul> -->
+    </div>
+    <button id="delBtn">삭제</button>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(onLoadFunc);
+
+        function onLoadFunc() {
+            $.ajax({
+                url: 'MOCK_DATA.json', // 호출할 페이지
+                // data: '', // 파라미터로 사용할 값
+                success: successCallBack, // 연결 성공
+                error: errorCallBack // 연결 실패
+            });
+        }
+
+        function successCallBack(result){ // 호출한 페이지의 데이터를 매개변수(여기서는 result)에 담는다.
+            const ulTag = $('<ul />');
+            for(let i of result){
+                let liTag = $('<li />');
+                liTag.attr('id', i.id);
+                liTag.html(i.id + i.first_name);
+                ulTag.append(liTag);
+            }
+            $('body').append(ulTag);
+        }
+
+        function errorCallBack(rejected){
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="show"></div>
+</body>
+
+</html>
