@@ -6,7 +6,7 @@
 
 
 // 브라우저가 load되었을때 (페이지를 새로 열거나 새로고침 했을때)
-window.onload = function () {
+window.onload = function (event) {
     // #commentList에 이미 저장된 게시글을 불러온다.
     loadCommentList();
 }
